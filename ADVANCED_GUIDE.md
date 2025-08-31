@@ -15,16 +15,16 @@ Agent Zero's capability to manage and delegate tasks to subordinate agents is in
     * **Interaction:** May receive high-level objectives from a human operator and then break them down for subordinate agents.
 * **Subordinate Specialist Agents:**
     * **ReconAgent (ParrotOS-Focused):**
-        * **System Prompt:** `prompts/parrot-hacking/multi-agent/recon_agent.system.md` (User would create this, emphasizing tools like `Nmap`, `theHarvester`, `Maltego` casefile generation, `OSINT-Framework` usage).
+        * **Example System Prompt:** For this agent, a user would create a custom system prompt. It should emphasize tools like `Nmap`, `theHarvester`, `Maltego` casefile generation, and `OSINT-Framework` usage.
         * **Tasks:** Deep network reconnaissance, OSINT, target profiling, identifying attack surfaces.
     * **VulnScanAgent (ParrotOS-Focused):**
-        * **System Prompt:** `prompts/parrot-hacking/multi-agent/vuln_scan_agent.system.md` (User would create this, focusing on `Nessus` (if API accessible), `OpenVAS` (via GVM-tools on Parrot), `Nikto`, `Searchsploit`, custom vulnerability scripting).
+        * **Example System Prompt:** A custom prompt for this agent should focus on tools like `Nessus` (if API accessible), `OpenVAS` (via GVM-tools on Parrot), `Nikto`, `Searchsploit`, and custom vulnerability scripting.
         * **Tasks:** Automated and manual vulnerability scanning, exploit research, false positive reduction.
     * **ExploitAgent (ParrotOS-Focused, Highly Restricted):**
-        * **System Prompt:** `prompts/parrot-hacking/multi-agent/exploit_agent.system.md` (User would create this, with EXTREME emphasis on safety, user confirmation for *every* step, Metasploit (`msfconsole`) interaction, and specific exploit script handling).
+        * **Example System Prompt:** This custom prompt requires EXTREME emphasis on safety and user confirmation for *every* step. It would manage interactions with Metasploit (`msfconsole`) and specific exploit scripts.
         * **Tasks:** Controlled exploitation of confirmed vulnerabilities, payload delivery, C2 setup (e.g., using `msfvenom` payloads and listeners).
     * **PostExAgent (ParrotOS-Focused):**
-        * **System Prompt:** `prompts/parrot-hacking/multi-agent/postex_agent.system.md` (User would create this, focusing on Parrot tools for lateral movement, privilege escalation scripts like `LinPEAS`/`WinPEAS`, data exfiltration techniques, and persistence mechanisms).
+        * **Example System Prompt:** A custom prompt here would focus on Parrot tools for lateral movement, privilege escalation scripts like `LinPEAS`/`WinPEAS`, data exfiltration techniques, and persistence mechanisms.
         * **Tasks:** Internal enumeration, privilege escalation, lateral movement, data exfiltration, maintaining access.
     * **ReportingAgent:**
         * **System Prompt:** A prompt focused on data aggregation, formatting, and report generation (e.g., converting structured data from other agents into Markdown or assisting with report sections).
@@ -33,7 +33,7 @@ Agent Zero's capability to manage and delegate tasks to subordinate agents is in
 **Delegation Prompt Example (Lead Agent to ReconAgent):**
 
 "Instantiate a subordinate agent named 'ReconSpecialistAlpha'.
-Assign it the system prompt located at 'prompts/parrot-hacking/multi-agent/recon_agent.system.md'.
+Assign it a custom system prompt you have created for reconnaissance, such as the example 'ReconAgent' prompt described above.
 The primary objective for ReconSpecialistAlpha is to conduct thorough external reconnaissance on the organization 'ExampleCorp' with the domain 'examplecorpltd.com'.
 Specific tasks include:
 
